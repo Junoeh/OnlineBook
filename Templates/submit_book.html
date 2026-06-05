@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Submit a Book</h1>
+
+<form method="POST">
+    <label>Book name</label>
+    <input type="text" name="title" required>
+
+    <label>Category</label>
+    <select name="category" required>
+        {% for category in categories %}
+            <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Book content</label>
+    <textarea name="content" rows="15" required></textarea>
+
+    <button type="submit">Submit Book</button>
+</form>
+{% endblock %}

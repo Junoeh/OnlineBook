@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ book[1] }}</h1>
+<p class="meta">
+    Category: {{ book[3] }}<br>
+    Uploaded by {{ book[4] }} on {{ book[5] }}
+</p>
+
+<div class="book-content">
+    {{ book[2] }}
+</div>
+{% endblock %}

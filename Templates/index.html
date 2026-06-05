@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Books</h1>
+
+<form method="GET" action="/">
+    <select name="category">
+        <option value="">All</option>
+        <option value="Horror">Horror</option>
+        <option value="Funny">Funny</option>
+        <option value="Sad">Sad</option>
+    </select>
+
+    <button type="submit">Sort</button>
+</form>
+
+{% for book in books %}
+    <div>
+        <h2>
+            <a href="/book/{{ book[0] }}">{{ book[1] }}</a>
+        </h2>
+
+        <p>Category: {{ book[3] }}</p>
+        <p>Uploaded by: {{ book[4] }}</p>
+    </div>
+{% endfor %}
+
+{% endblock %}
